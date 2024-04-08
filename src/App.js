@@ -1,7 +1,8 @@
 import {
   BrowserRouter,
   Routes, 
-  Route
+  Route,
+  Navigate
 } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import CartPage from './pages/CartPage';
@@ -14,7 +15,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<HomePage />}></Route>
+        <Route path="/" element={<Navigate to="/mall" />}></Route>
         <Route path="/mall" element={<HomePage />}/>
         <Route path="/cart" element={<CartPage />} />
         <Route path="/checkout" element={<CheckoutPage />} />
