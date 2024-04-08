@@ -1,6 +1,8 @@
 import React from 'react';
 import { styled, css } from 'styled-components';
 import Header from './Header';
+import Footer from './Footer';
+import Container from '../common/Comtainer';
 
 const PageHeader = styled.div`
     ${(props) => 
@@ -16,8 +18,8 @@ const DefaultLayout = ({fixedHeader, children}) => {
             <PageHeader fixed={fixedHeader}>
                 <Header />
             </PageHeader>
-            {children}
-            <footer>This is a footer</footer>
+            <Container>{children}</Container>
+            <Footer />
         </div>
     );
 };
