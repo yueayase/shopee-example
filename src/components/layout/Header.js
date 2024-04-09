@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { Input } from 'antd';
 import { ShoppingCartOutlined } from '@ant-design/icons';
 import Container from '../common/Comtainer';
-import Logo from '../images/logo.png'
+import Logo from '../../images/logo.png'
 
 const StyledHeader = styled.header`
     background-color: #d0011b;
@@ -34,7 +34,7 @@ const Toolbar = styled.div`
     }
 `;
 
-const Flex = styled.div`
+const Box = styled.div`
     display: flex;
     align-items: center;
 `;
@@ -61,9 +61,9 @@ const Header = () => {
                 </StyledHeaderSection>
                 <StyledHeaderSection>
                     <Link to="/">
-                        <img src={Logo} alt="logo" height={36}></img>
+                        <img src={Logo} alt="logo" height={36} />
                     </Link>
-                    <Flex>
+                    <Box>
                         <Search 
                             style={{ marginRight: 8 }}
                             placeholder="在商城搜尋" 
@@ -73,7 +73,7 @@ const Header = () => {
                         <Link to="/cart">
                             <ShoppingCartOutlined style={{ fontSize: '32px', color: 'white' }}/>
                         </Link>
-                    </Flex>
+                    </Box>
                 </StyledHeaderSection>
             </Container>
         </StyledHeader>
