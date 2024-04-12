@@ -40,7 +40,6 @@ const Box = styled.div`
 const AppRow = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: center;
     width: 50%;
 `;
 
