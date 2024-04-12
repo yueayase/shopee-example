@@ -4,29 +4,32 @@ import Header from './Header';
 import Footer from './Footer';
 import Container from '../common/Comtainer';
 
-// const PageHeader = styled.div`
-//     ${(props) => 
-//     props.fixed && 
-//     css`
-//         position: fixed;
-//     `}
-// `;
-
-const PageHeader = styled(Header)`
+const PageHeader = styled.div`
     ${(props) => 
-    props.fixed && 
-    css`
-        position: fixed;
-    `}
+        props.fixed && 
+        css`
+            z-index: 1;
+            position: fixed;
+        `}
 `;
+
+// not work
+// const PageHeader = styled(Header)`
+//     ${(props) => 
+//         props.fixed && 
+//         css`
+//             z-index: 1;
+//             position: fixed;
+//         `}
+// `;
 
 const DefaultLayout = ({fixedHeader, children}) => {
     return (
         <div>
-            {/* <PageHeader fixed={fixedHeader}>
+            <PageHeader fixed={fixedHeader}>
                 <Header />
-            </PageHeader> */}
-            <PageHeader />
+            </PageHeader>
+            {/* <PageHeader fixed={fixedHeader} /> */}
             <Container>{children}</Container>
             <Footer />
         </div>
