@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { Input } from 'antd';
 import { ShoppingCartOutlined } from '@ant-design/icons';
 import Container from '../common/Comtainer';
 import Logo from '../../images/logo.png'
+import AuthContext from '../auth/AuthContext';
 
 const StyledHeader = styled.header`
     background-color: #d0011b;
@@ -43,6 +44,8 @@ const { Search } = Input;
 const onSearch = (value, _e, info) => console.log(info?.source, value);
 
 const Header = () => {
+    const { isAuthenticated, logout } = useContext(AuthContext);
+
     return (
         <StyledHeader>
             <Container>
@@ -56,7 +59,15 @@ const Header = () => {
                     <Toolbar>
                         <a href="#!">通知</a>
                         <a href="#!">幫助中心</a>
-                        <a href="#!">帳號</a>
+                        {isAuthenticated ? (
+                            <div>
+                                <a href="#!">Kevin</a>
+                                <span onClick={() => logout()}>登出</span>
+                            </div>
+                        ) : (
+                            <Link to="/login">註冊/登入</Link>
+                        )}
+                        
                     </Toolbar>
                 </StyledHeaderSection>
                 <StyledHeaderSection>
