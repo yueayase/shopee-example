@@ -9,6 +9,7 @@ import Banner2 from '../images/banner/banner2.jpg';
 import Banner3 from '../images/banner/banner3.jpg';
 import ProductCard from '../components/product/ProductCard';
 import AuthContext from '../components/auth/AuthContext';
+import PopupModal from '../components/common/PopupModal';
 
 const BannerBox = styled.div`
     display: flex;
@@ -93,6 +94,7 @@ const HomePage = () => {
     const { isAuthenticated } = useContext(AuthContext);
     return (
         <DefaultLayout fixedHeader>
+            <PopupModal />
             <ClearFix />
             {isAuthenticated && <h1>歡迎回來</h1>}
             <BannerBox>

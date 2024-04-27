@@ -43,11 +43,11 @@ const Box = styled.div`
 const { Search } = Input;
 const onSearch = (value, _e, info) => console.log(info?.source, value);
 
-const Header = () => {
+const Header = ({ className }) => {
     const { isAuthenticated, logout } = useContext(AuthContext);
 
     return (
-        <StyledHeader>
+        <StyledHeader className={className}>
             <Container>
                 <StyledHeaderSection>
                     <Navigator>
